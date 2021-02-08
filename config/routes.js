@@ -1,5 +1,10 @@
+
+
+
 // TODO: Require Controllers...
 
 module.exports = (app) => {
-    // TODO...
+    app.get('/',(req,res) => {
+        res.render('home',{layout: false})
+    })
 };
