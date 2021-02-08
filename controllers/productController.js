@@ -5,7 +5,7 @@ const router = Router()
 
 
 router.get('/', (req, res) => {
-    let products = dataService.getAll()
+    let products = dataService.getAll(req.query)
     res.render('home',{products})
 })
 

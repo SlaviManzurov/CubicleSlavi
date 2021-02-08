@@ -5,8 +5,13 @@ const path = require('path')
 
 let productData = require('../config/database.json')
 
-function getAll() {
-    return productData
+function getAll(query) {
+    let result = productData
+    
+    if (query.search){
+        result = result.filter(x => x.name.toLocaleLowerCase().includes(query.search))
+    }
+    return result
 }
 
 function getOne(id) {
