@@ -1,11 +1,11 @@
 const { Router } = require('express')
-const createProduct = require('../services/productServices')
+const dataService = require('../services/productServices')
 
 const router = Router()
 
 
 router.get('/', (req, res) => {
-    let products = createProduct.getAll()
+    let products = dataService.getAll()
     res.render('home',{products})
 })
 
@@ -16,13 +16,13 @@ router.get('/create', (req, res) => {
 router.post('/create', (req, res) => {
 
     let data = req.body;
-    createProduct(data)
+    dataService.createProduct(data)
     res.redirect('/')
 })
 
 router.get('/details/:productId', (req, res) => {
 
-    let product = createProduct.getOne(req.params.productId)
+    let product = dataService.getOne(req.params.productId)
     res.render('details', {product})
 })
 
