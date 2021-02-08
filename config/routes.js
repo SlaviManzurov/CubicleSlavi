@@ -7,6 +7,6 @@ module.exports = (app) => {
     app.use('/', productController)
     app.use('/about', aboutController)
     app.get('*',(req,res)=>{
-        res.render('404',{layout: false})
+        res.render('404')
     })
 };
