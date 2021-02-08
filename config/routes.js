@@ -1,10 +1,6 @@
-
-
-
+const productController = require('../controllers/productController')
 // TODO: Require Controllers...
 
 module.exports = (app) => {
-    app.get('/',(req,res) => {
-        res.render('home',{layout: false})
-    })
+    app.use('/', productController)
 };
