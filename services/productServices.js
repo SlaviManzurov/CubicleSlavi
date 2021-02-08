@@ -29,4 +29,7 @@ function createProduct(data) {
     })
 }
 
-module.exports = createProduct;
+module.exports = {
+    getAll,
+    createProduct,
+};
